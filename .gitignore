@@ -1,0 +1,7 @@
+# Ignore paths that contain user-generated content.
+.git
+.gulp
+.sass-cache
+dist
+node_modules
+src/css

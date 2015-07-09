@@ -1,0 +1,31 @@
+$tablet-width: 768px;
+@mixin desktop(){ // Media Query Desktop
+  @media all and (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin mobile(){ // Media Query Mobile
+  @media all and (max-width: ($tablet-width - 1px)) {
+    @content;
+  }
+}
+
+@mixin media-queries($width){
+  @media all and (max-width: ($width + px)) {
+   @content;
+  }
+}
+
+@mixin font($sizeValue: 16, $heightValue: 16){
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: (0.0625 * $sizeValue) + rem;
+  line-height: $heightValue + px; //fallback for old browsers
+  line-height: (0.0625 * $heightValue) + rem;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;
+}
